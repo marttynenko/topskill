@@ -1,0 +1,93 @@
+<div class="mfp-popup zoom-anim-dialog popup-pay">
+  <div class="mfp-popup-title">O'qish uchun to'lov</div>
+
+  <div class="popup-pay-products">
+    <div class="popup-pay-product">
+      <div class="popup-pay-product-title"><a href="#">Kurs "Juda uzun kurs nomi uchun test sarlavhasi, hattoki uchta qatordan iborat boʻlishi mumkin"</a></div>
+      <div class="popup-pay-product-price">3 900 ₽</div>
+      <div class="popup-pay-product-remove" onclick="">
+        <svg class="sprite"><use xlink:href="svg/svg/symbols.svg#close-red"/></svg>
+      </div>
+    </div>
+    <div class="popup-pay-product">
+      <div class="popup-pay-product-title"><a href="#">TOPSKILL promo-kodi</a></div>
+      <div class="popup-pay-product-price">-500 ₽</div>
+      <div class="popup-pay-product-remove" onclick="">
+        <svg class="sprite"><use xlink:href="svg/svg/symbols.svg#close-red"/></svg>
+      </div>
+    </div>
+  </div>
+  
+  <div class="popup-pay-total">
+    <div class="popup-pay-total-label">Jami</div>
+    <div class="popup-pay-total-total">3 400 ₽</div>
+  </div>
+
+  <form class="form_pay">
+    <div class="ui-field">
+      <label for="name" class="ui-field-label">Ism</label>
+      <input type="text" class="ui-input" name="name" required placeholder="Ismingizni kiriting">
+    </div>
+
+    <div class="ui-field">
+      <label for="mail" class="ui-field-label">E-mail</label>
+      <input type="email" class="ui-input" name="mail" required placeholder="Elektron pochtangizni kiriting">
+    </div>
+
+
+    <div class="ui-field">
+      <label for="phone" class="ui-field-label">Telefon raqami</label>
+      <input type="tel" class="ux-mask-phone ui-input" name="phone" placeholder="999 90 900 00 00">
+    </div>
+
+    <div class="ui-field">
+      <label for="kuppon" class="ui-field-label">Kupon kodi</label>
+      <input type="text" class="ui-input" name="kupon" placeholder="Promo-kodni kiriting">
+    </div>
+
+    <div class="ui-field">
+      <button class="ui-btn ui-btn-block">To'lash</button>
+    </div>
+    
+    <label for="check" class="ui-styler ui-fz-18">
+      <input type="checkbox" name="check" id="check" class="ux-styler" checked>
+      <span class="ui-styler-txt">Men taklif shartlarini qabul qilaman va ma'lumotlarni qayta ishlashga roziman</span>
+    </label>
+    
+
+  </form>
+
+  <script>
+    FARBA.lazyLibraryLoad(
+      '//cdnjs.cloudflare.com/ajax/libs/imask/6.2.2/imask.min.js',
+      '',
+      () => {
+        const masks = document.querySelectorAll('.mfp-popup .ux-mask-phone')
+        const maskOptions = {
+          mask: '000 00 000 00 00',
+          // lazy: false,
+        }
+        masks.forEach(el => {
+          IMask(el, maskOptions)
+        })
+      }
+    );
+
+
+    jQuery(document).ready(function($){
+      $('.mfp-popup .ux-styler').styler()
+
+      $('form.form_pay').validate({
+        rules: {
+          phone: {
+            telephone: true
+          },
+          mail: {
+            required: true,
+            email: true
+          }
+        }
+      })
+    });
+  </script>
+</div>

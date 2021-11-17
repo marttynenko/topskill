@@ -1,0 +1,89 @@
+<!--#include file="inc-header.html"-->
+
+<div class="row">
+  <div class="col-md-4 col-sm-6">
+    <div class="profile-card">
+      <div class="profile-card-short">
+        <div class="profile-card-ava">
+          <img src="./images/examples/profile.jpg" loading="lazy" alt="Konstantin Konstantinopol">
+        </div>
+        <div class="profile-card-name">Konstantin Konstantinopol</div>
+      </div>
+
+      <div class="profile-card-nav">
+        <a href="#" class="profile-card-nav-link active">O'zim haqimda</a>
+        <a href="#" class="profile-card-nav-link">Faoliyat</a>
+        <a href="#" class="profile-card-nav-link">Parol</a>
+        <a href="#" class="profile-card-nav-link">Ijtimoiy tarmoq</a>
+      </div>
+      
+    </div><!--.card-->
+  </div>
+
+  <div class="col-lg-5 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-6">
+    <div class="profile-form">
+      <form class="ux-form form_profile">
+        <div class="ui-field">
+          <label for="name" class="ui-field-label">Ism</label>
+          <input type="text" class="ui-input" name="name" placeholder="Ismingizni kiriting">
+        </div>
+
+        <div class="ui-field">
+          <label for="lastname" class="ui-field-label">Familiya</label>
+          <input type="text" class="ui-input" name="lastname" placeholder="Iltimos, familiyangizni kiriting">
+        </div>
+
+        <div class="ui-field">
+          <div class="profile-preview">
+            <div class="profile-preview-img">
+              <img src="./images/examples/profile.jpg" alt="предпросмотр">
+            </div>
+
+            <div class="profile-preview-actions">
+              <a href="javascript:void(0)" class="ui-btn profile-preview-btn">
+                <input type="file" name="" id="">
+                Surat yuklang
+              </a>
+
+              <a href="javascript:void(0)" class="profile-preview-delete">Suratni oʻchirish</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ui-field">
+          <label for="phone" class="ui-field-label">Telefon</label>
+          <input type="tel" class="ux-mask-phone ui-input" name="phone" placeholder="999 90 900 00 00">
+        </div>
+
+        <div class="ui-field">
+          <label for="mail" class="ui-field-label">Pochta</label>
+          <input type="email" class="ui-input" name="mail" placeholder="Elektron pochtangizni kiriting">
+        </div>
+
+        <div class="ui-field">
+          <label for="date" class="ui-field-label">Tug'ilgan kun</label>
+          <input type="text" class="ui-input ux-mask-date" name="date" placeholder="01.01.1990">
+        </div>
+
+        <div class="ui-field">
+          <label for="city" class="ui-field-label">Shahar</label>
+          <input type="text" class="ui-input" name="city" placeholder="Shaharingizni kiriting">
+        </div>
+
+        <div class="ui-field">
+          <label for="sex" class="ui-field-label">Qavat</label>
+          <select name="sex" class="ux-styler ui-select-block">
+            <option value="1">Erkak</option>
+            <option value="2">Ayol</option>
+          </select>
+        </div>
+
+        <div class="ui-field">
+          <button class="ui-btn ui-btn-block">Saqlash</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div><!--.row-->
+
+<!--#include file="inc-footer.html"-->

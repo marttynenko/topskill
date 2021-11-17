@@ -1,0 +1,22 @@
+<div class="mfp-popup popup-reset zoom-anim-dialog">
+  <div class="mfp-popup-title">Parolni tiklash</div>
+
+  <form class="form_pass_reset">
+    <div class="ui-field">
+      <label for="mail" class="ui-field-label">Sizning pochtangiz</label>
+      <input type="email" class="ui-input" name="mail" required>
+    </div>
+    <button class="ui-btn ui-btn-block">Kirish uchun</button>
+  </form>
+<script>
+  jQuery(document).ready(function($){
+    $('.form_pass_reset').validate({
+      rules: {
+        mail: {
+          email: true
+        }
+      }
+    })
+  });
+</script>
+</div>

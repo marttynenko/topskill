@@ -1,0 +1,38 @@
+footer.footer {
+  padding: 42px 0px 27px;
+  border-top: 1px solid #F1F1F1;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    padding-bottom: 22px;
+  }
+}
+
+.footer-copy {
+  margin-bottom: 15px;
+}
+.footer-links {
+  text-align: right;
+  margin-bottom: 15px;
+
+  a {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 37px;
+    color: $font_2;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
+
+    a {
+      display: block;
+      margin-bottom: 4px;
+      margin-left: 0;
+    }
+  }
+}

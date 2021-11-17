@@ -1,0 +1,71 @@
+<div class="mfp-popup zoom-anim-dialog popup-auth">
+  <div class="mfp-popup-title">Profilingizga kiring</div>
+
+  <form class="form_auth">
+    <div class="ui-field">
+      <label for="phone" class="ui-field-label">Telefon raqami</label>
+      <input type="tel" class="ux-mask-phone ui-input" name="phone" required placeholder="999 90 900 00 00">
+    </div>
+
+    <div class="ui-field">
+      <label for="pass" class="ui-field-label">Parol</label>
+      <div class="ui-input-wrp">
+        <input type="password" class="ui-input" name="pass" required placeholder="Eski parol">
+        <div class="ui-input-typetoggler ux-input-typetoggler"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#eye"/></svg></div>
+      </div>
+    </div>
+
+    <div class="popup-auth-btns">
+      <div class="popup-auth-submit">
+        <button class="ui-btn ui-btn-block">Kirish uchun</button>
+      </div>
+      <div class="popup-auth-remember">
+        <a href="#" class="popup-auth-remember-link">Parolni eslay olmayman</a>
+      </div>
+    </div>
+
+    <div class="popup-auth-register ui-centered">
+      Hali profilingiz yo'qmi? <a href="#" class="popup-auth-register-link">Hozir roʻyxatdan oʻting</a>   
+    </div>
+
+    <div class="popup-auth-socials ui-centered">
+      <a href="#" class="popup-auth-socials-link"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#vk"/></svg></a>
+      <a href="#" class="popup-auth-socials-link"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#facebook"/></svg></a>
+      <a href="#" class="popup-auth-socials-link"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#googleplus"/></svg></a>
+    </div>
+
+  </form>
+
+  <script>
+    FARBA.lazyLibraryLoad(
+      '//cdnjs.cloudflare.com/ajax/libs/imask/6.2.2/imask.min.js',
+      '',
+      () => {
+        const masks = document.querySelectorAll('.mfp-popup .ux-mask-phone')
+        const maskOptions = {
+          mask: '000 00 000 00 00',
+          // lazy: false,
+        }
+        masks.forEach(el => {
+          IMask(el, maskOptions)
+        })
+      }
+    );
+
+
+    jQuery(document).ready(function($){
+      $('form.form_auth').validate({
+        rules: {
+          phone: {
+            required: true,
+            telephone: true
+          },
+          pass: {
+            required: true,
+            minlength: 8
+          }
+        }
+      })
+    });
+  </script>
+</div>
