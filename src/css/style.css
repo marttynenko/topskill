@@ -1209,6 +1209,8 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 
 .popup-auth-remember { padding-left: 15px; -webkit-box-flex: 0; -ms-flex: 0 0 120px; flex: 0 0 120px; max-width: 1200px; margin-bottom: 10px; text-align: right; }
 
+@media (min-width: 480px) { .popup-auth-remember-link { display: inline-block; text-align: left; } }
+
 .popup-auth-register { margin-bottom: 35px; }
 
 .popup-auth-register-link { font-weight: 600; }
