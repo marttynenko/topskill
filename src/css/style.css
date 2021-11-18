@@ -99,8 +99,8 @@ svg.svg-inline { display: inline-block; vertical-align: middle; position: relati
 ::-moz-selection { background: #7CB0FF; color: #FFF; }
 
 @media (min-width: 992px) { ::-webkit-scrollbar { background: #EEE; width: 8px; height: 8px; }
-  ::-webkit-scrollbar-thumb { background: #7CB0FF; width: 8px; height: 8px; -webkit-transition: all .8s; transition: all .8s; }
-  ::-webkit-scrollbar-thumb:hover { background: #589aff; } }
+  ::-webkit-scrollbar-thumb { background: #7C89FF; width: 8px; height: 8px; -webkit-transition: all .8s; transition: all .8s; }
+  ::-webkit-scrollbar-thumb:hover { background: #5364ff; } }
 
 .ui-page-title { margin-bottom: 35px; }
 
@@ -215,6 +215,10 @@ textarea.ui-input { display: block; padding: 10px 15px; border: 1px solid #D4D4D
 
 .ui-input-typetoggler:hover { opacity: 0.75; }
 
+.ui-input-typetoggler.closed { background: url(../images/svg/eye-closed.svg) center no-repeat; background-size: contain; }
+
+.ui-input-typetoggler.closed svg { opacity: 0; }
+
 .invalid { border-color: #FF7C7C !important; color: #FF7C7C !important; }
 
 .invalid * { border-color: #FF7C7C !important; color: #FF7C7C !important; }
@@ -234,6 +238,8 @@ span.invalid { padding-top: 3px; padding-left: 25px; }
 .ui-field { position: relative; }
 
 .ui-field span.invalid { position: absolute; left: 0; top: 100%; }
+
+.ui-field .iti { display: block; width: 100%; }
 
 .error-field { border: 1px solid #e83f32 !important; }
 
@@ -544,6 +550,10 @@ span.invalid { padding-top: 3px; padding-left: 25px; }
 
 .jq-selectbox__dropdown[style*="top: auto;"] { bottom: 62px; }
 
+.jq-selectbox.ui-select-mini-fixed { width: 190px; }
+
+@media (max-width: 420px) { .jq-selectbox.ui-select-mini-fixed { width: 140px; } }
+
 .jq-selectbox.ui-select-mini .jq-selectbox__select { height: 40px; line-height: 40px; border: 0 !important; background: #F8F8F8; border-radius: 20px; padding: 0px 50px 0px 20px; font-size: 15px; font-size: 0.9375rem; }
 
 .jq-selectbox.ui-select-mini .jq-selectbox__dropdown { top: 40px; padding: 0; }
@@ -645,6 +655,12 @@ img.slick-loading { opacity: 0; -webkit-transform: scale(0.95); -ms-transform: s
 @media (min-width: 768px) { .ui-only-mobile { display: none !important; visibility: hidden; } }
 
 @media (max-width: 768px) { .ui-only-desktop { display: none !important; visibility: hidden; } }
+
+.iti--allow-dropdown input, .iti--allow-dropdown input[type=text], .iti--allow-dropdown input[type=tel], .iti--separate-dial-code input, .iti--separate-dial-code input[type=text], .iti--separate-dial-code input[type=tel] { padding-left: 85px; }
+
+.iti__selected-flag { padding-left: 25px; padding-right: 10px; }
+
+.iti__arrow { border: 0; margin-left: 12px; width: 14px; height: 14px; background: url(../images/svg/toggler.svg) center no-repeat; background-size: 10px; }
 
 header.header { margin-bottom: 50px; padding-top: 25px; padding-bottom: 25px; border-bottom: 1px solid #F1F1F1; }
 
@@ -835,7 +851,11 @@ footer.footer { padding: 42px 0px 27px; border-top: 1px solid #F1F1F1; }
 
 .profile-card-nav-link:hover, .profile-card-nav-link.active { background: #000; color: #FFF; }
 
+.profile-card-nav-link:last-child { border-radius: 0px 0px 19px 19px; }
+
 .profile-form { font-size: 18px; font-size: 1.125rem; }
+
+.profile-save-hint { font-size: 14px; font-size: 0.875rem; font-weight: 400; color: #000; }
 
 .profile-preview { display: -webkit-box; display: -ms-flexbox; display: flex; }
 

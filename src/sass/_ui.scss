@@ -123,13 +123,13 @@ svg.svg-inline {
 		height: 8px;
 	}
 	::-webkit-scrollbar-thumb {
-		background: $primary;
+		background: #7C89FF;
 		width: 8px;
 		height: 8px;
 		transition: all .8s;
 	}
 	::-webkit-scrollbar-thumb:hover {
-		background: $primary_hover;
+		background: darken(#7C89FF, 8%);
 	}
 }
 
@@ -517,6 +517,16 @@ textarea.ui-input {
 		&:hover {
 			opacity: 0.75;
 		}
+
+		&.closed {
+			background: url(../images/svg/eye-closed.svg) center no-repeat;
+			background-size: contain;
+
+			svg {
+				opacity: 0;
+			}
+		}
+
 	}
 }
 
@@ -558,12 +568,17 @@ span.invalid {
 }
 
 .ui-field {
-
 	position: relative;
+
 	span.invalid {
 		position: absolute;
 		left: 0;
 		top: 100%;
+	}
+
+	.iti {
+		display: block;
+		width: 100%;
 	}
 }
 .error-field {
@@ -1547,6 +1562,14 @@ span.invalid {
 	}
 
 	&.ui-select-mini {
+
+		&-fixed {
+			width: 190px;
+
+			@media (max-width: 420px) {
+				width: 140px;
+			}
+		}
 		.jq-selectbox {
 
 			&__select {
@@ -1880,4 +1903,25 @@ img.slick-loading {
 			visibility: hidden;
 		}
 	}
+}
+
+.iti--allow-dropdown input,
+.iti--allow-dropdown input[type=text],
+.iti--allow-dropdown input[type=tel],
+.iti--separate-dial-code input,
+.iti--separate-dial-code input[type=text],
+.iti--separate-dial-code input[type=tel] {
+	padding-left: 85px;
+}
+.iti__selected-flag {
+	padding-left: 25px;
+	padding-right: 10px;
+}
+.iti__arrow {
+	border: 0;
+	margin-left: 12px;
+	width: 14px;
+	height: 14px;
+	background: url(../images/svg/toggler.svg) center no-repeat;
+	background-size: 10px;
 }

@@ -209,6 +209,7 @@ jQuery(document).ready(function($){
 		e.preventDefault();
 		const input = $(this).parent().find('input.ui-input')
 		const type = input.attr('type')
+		$(this).toggleClass('closed');
 		type == 'password'
 			? input.attr('type','text')
 			: input.attr('type','password')
@@ -261,6 +262,14 @@ jQuery(document).ready(function($){
 			mainClass: 'my-mfp-zoom-in',
 			ajax: {
 				tError: 'Error. Not valid url',
+			},
+			callbacks: {
+				ajaxContentAdded: function () {
+					setTimeout(function(){
+						$('.mfp-wrap, .mfp-bg').addClass('delay-back');
+						$('.mfp-popup').addClass('delay-back');
+					},700);
+				}
 			}
 		});
 		return false;
@@ -273,8 +282,16 @@ jQuery(document).ready(function($){
 		// singleSelectzIndex: '1',
 	});
 
-
 });//ready close
+
+
+const intlTelInputs = document.querySelectorAll(".ux-mask-phone");
+intlTelInputs.forEach(el => {
+	intlTelInput(el, {
+		// utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.min.js",
+	})
+})
+
 
 if (document.querySelector('.ux-mask-date')) {
 	FARBA.lazyLibraryLoad(
@@ -312,23 +329,23 @@ if (document.querySelector('.ux-mask-date')) {
 	)
 }
 
-if (document.querySelector('.ux-mask-phone')) {
-  FARBA.lazyLibraryLoad(
-    '//cdnjs.cloudflare.com/ajax/libs/imask/6.2.2/imask.min.js',
-    '',
-    () => {
-      const masks = document.querySelectorAll('.ux-mask-phone')
-      const maskOptions = {
-        mask: '000 00 000 00 00',
-        // mask: '+{000} 00 000 00 00',
-        // lazy: false,
-      }
-      masks.forEach(el => {
-        IMask(el, maskOptions)
-      })
-    }
-  )
-}
+// if (document.querySelector('.ux-mask-phone')) {
+//   FARBA.lazyLibraryLoad(
+//     '//cdnjs.cloudflare.com/ajax/libs/imask/6.2.2/imask.min.js',
+//     '',
+//     () => {
+//       const masks = document.querySelectorAll('.ux-mask-phone')
+//       const maskOptions = {
+//         mask: '000 00 000 00 00',
+//         // mask: '+{000} 00 000 00 00',
+//         // lazy: false,
+//       }
+//       masks.forEach(el => {
+//         IMask(el, maskOptions)
+//       })
+//     }
+//   )
+// }
 
 
 if (document.querySelector('.ux-share')) {

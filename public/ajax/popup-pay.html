@@ -58,20 +58,26 @@
   </form>
 
   <script>
-    FARBA.lazyLibraryLoad(
-      '//cdnjs.cloudflare.com/ajax/libs/imask/6.2.2/imask.min.js',
-      '',
-      () => {
-        const masks = document.querySelectorAll('.mfp-popup .ux-mask-phone')
-        const maskOptions = {
-          mask: '000 00 000 00 00',
-          // lazy: false,
-        }
-        masks.forEach(el => {
-          IMask(el, maskOptions)
-        })
-      }
-    );
+    const mfp2IntlTelInputs = document.querySelectorAll(".mfp-popup .ux-mask-phone");
+    mfp2IntlTelInputs.forEach(el => {
+      intlTelInput(el, {
+        // utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.min.js",
+      })
+    })
+    // FARBA.lazyLibraryLoad(
+    //   '//cdnjs.cloudflare.com/ajax/libs/imask/6.2.2/imask.min.js',
+    //   '',
+    //   () => {
+    //     const masks = document.querySelectorAll('.mfp-popup .ux-mask-phone')
+    //     const maskOptions = {
+    //       mask: '000 00 000 00 00',
+    //       // lazy: false,
+    //     }
+    //     masks.forEach(el => {
+    //       IMask(el, maskOptions)
+    //     })
+    //   }
+    // );
 
 
     jQuery(document).ready(function($){

@@ -385,12 +385,21 @@
         background: #000;
         color: #FFF;
       }
+
+      &:last-child {
+        border-radius: 0px 0px 19px 19px;
+      }
     }
   }
 }
 
 .profile-form {
   @include fz(18);
+}
+.profile-save-hint {
+  @include fz(14);
+  font-weight: 400;
+  color: $font;
 }
 .profile-preview {
   display: flex;
